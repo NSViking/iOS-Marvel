@@ -37,6 +37,9 @@
 		5C17A7222198C1CA00B9FC25 /* HomeViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7212198C1CA00B9FC25 /* HomeViewContract.swift */; };
 		5C17A7252198C27E00B9FC25 /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7242198C27E00B9FC25 /* ComicViewModel.swift */; };
 		5C17A7282198C30400B9FC25 /* ComicMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7272198C30400B9FC25 /* ComicMapper.swift */; };
+		5C17A72B2198C58700B9FC25 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A72A2198C58700B9FC25 /* HomeInteractorTests.swift */; };
+		5C17A72D2198C59000B9FC25 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A72C2198C59000B9FC25 /* HomePresenterTests.swift */; };
+		5C17A7302198C5BC00B9FC25 /* ComicsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A72F2198C5BC00B9FC25 /* ComicsRepositoryMock.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,9 @@
 		5C17A7212198C1CA00B9FC25 /* HomeViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContract.swift; sourceTree = "<group>"; };
 		5C17A7242198C27E00B9FC25 /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewModel.swift; sourceTree = "<group>"; };
 		5C17A7272198C30400B9FC25 /* ComicMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicMapper.swift; sourceTree = "<group>"; };
+		5C17A72A2198C58700B9FC25 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		5C17A72C2198C59000B9FC25 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		5C17A72F2198C5BC00B9FC25 /* ComicsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsRepositoryMock.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				5C17A6F42198AD3300B9FC25 /* Mock */,
+				5C17A72E2198C59300B9FC25 /* Presenter */,
+				5C17A7292198C57300B9FC25 /* Interactor */,
 				5C17A70C2198B83300B9FC25 /* APIModule */,
 				5C17A6F12198ACF000B9FC25 /* Repository */,
 				5C17A6CE2198A7D100B9FC25 /* MarvelTests.swift */,
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				5C17A6F52198AD4B00B9FC25 /* HTTPClientMock.swift */,
+				5C17A72F2198C5BC00B9FC25 /* ComicsRepositoryMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -349,6 +358,22 @@
 				5C17A7272198C30400B9FC25 /* ComicMapper.swift */,
 			);
 			path = Mappers;
+			sourceTree = "<group>";
+		};
+		5C17A7292198C57300B9FC25 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A72A2198C58700B9FC25 /* HomeInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5C17A72E2198C59300B9FC25 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A72C2198C59000B9FC25 /* HomePresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,9 +657,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C17A6CF2198A7D100B9FC25 /* MarvelTests.swift in Sources */,
+				5C17A72B2198C58700B9FC25 /* HomeInteractorTests.swift in Sources */,
 				5C17A6F32198ACFA00B9FC25 /* ComicsRepositoryTests.swift in Sources */,
 				5C17A70E2198B84100B9FC25 /* ComicsAPIModuleTests.swift in Sources */,
 				5C17A6F62198AD4B00B9FC25 /* HTTPClientMock.swift in Sources */,
+				5C17A7302198C5BC00B9FC25 /* ComicsRepositoryMock.swift in Sources */,
+				5C17A72D2198C59000B9FC25 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
