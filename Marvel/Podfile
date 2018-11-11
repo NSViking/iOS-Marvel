@@ -1,0 +1,31 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target 'Marvel' do
+    pod 'AlamofireImage'
+    pod 'SnapKit', '~> 4.0.1'
+	pod 'Moya'
+	pod 'Moya/RxSwift'
+	pod 'RxSwift'
+	pod 'RxCocoa'
+    pod 'Device'
+end
+
+target 'MarvelTests' do
+	pod 'Mockit'
+	pod 'Moya'
+	pod 'Moya/RxSwift'
+	pod 'RxSwift'
+	pod 'RxBlocking'
+	pod 'RxTest'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+        end
+    end
+end
+
