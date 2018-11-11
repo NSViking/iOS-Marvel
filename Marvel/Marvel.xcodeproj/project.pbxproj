@@ -54,6 +54,8 @@
 		5C17A74F2198CE0100B9FC25 /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */; };
 		5C17A7512198CEFD00B9FC25 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7502198CEFD00B9FC25 /* HomeConfigurator.swift */; };
 		5C17A7532198CF3000B9FC25 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7522198CF3000B9FC25 /* HomeRouter.swift */; };
+		5C17A7552198D41300B9FC25 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7542198D41300B9FC25 /* Hash.swift */; };
+		5C17A75B2198D83100B9FC25 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A75A2198D83100B9FC25 /* Dates.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,9 @@
 		5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
 		5C17A7502198CEFD00B9FC25 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		5C17A7522198CF3000B9FC25 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		5C17A7542198D41300B9FC25 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
+		5C17A7562198D44900B9FC25 /* Marvel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Marvel-Bridging-Header.h"; sourceTree = "<group>"; };
+		5C17A75A2198D83100B9FC25 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 				5C17A6B72198A7CE00B9FC25 /* Products */,
 				4F16A529ED668E69DAA82CA6 /* Pods */,
 				553C9DCAA591E9F6495E2262 /* Frameworks */,
+				5C17A7562198D44900B9FC25 /* Marvel-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -470,6 +476,8 @@
 				5C17A7482198CCA700B9FC25 /* Fonts.swift */,
 				5C17A74A2198CCC700B9FC25 /* Devices.swift */,
 				5C17A74C2198CD5300B9FC25 /* Views.swift */,
+				5C17A7542198D41300B9FC25 /* Hash.swift */,
+				5C17A75A2198D83100B9FC25 /* Dates.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 				TargetAttributes = {
 					5C17A6B52198A7CE00B9FC25 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					5C17A6C92198A7D100B9FC25 = {
 						CreatedOnToolsVersion = 10.1;
@@ -727,6 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C17A6BC2198A7CE00B9FC25 /* ViewController.swift in Sources */,
+				5C17A75B2198D83100B9FC25 /* Dates.swift in Sources */,
 				5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */,
 				5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */,
 				5C17A7402198CACA00B9FC25 /* HomeViewController+Layout.swift in Sources */,
@@ -748,6 +758,7 @@
 				5C17A71C2198C15400B9FC25 /* HomePresenter.swift in Sources */,
 				5C17A7512198CEFD00B9FC25 /* HomeConfigurator.swift in Sources */,
 				5C17A7532198CF3000B9FC25 /* HomeRouter.swift in Sources */,
+				5C17A7552198D41300B9FC25 /* Hash.swift in Sources */,
 				5C17A7072198B5F000B9FC25 /* HTTPClient.swift in Sources */,
 				5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */,
 				5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */,
@@ -942,6 +953,7 @@
 			baseConfigurationReference = 4097CD166D5B764D7724D7E6 /* Pods-Marvel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QH2U923HT;
 				INFOPLIST_FILE = Marvel/Info.plist;
@@ -951,6 +963,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsouls.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Marvel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -961,6 +975,7 @@
 			baseConfigurationReference = 901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QH2U923HT;
 				INFOPLIST_FILE = Marvel/Info.plist;
@@ -970,6 +985,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.devsouls.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Marvel-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

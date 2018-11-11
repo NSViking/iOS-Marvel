@@ -36,18 +36,14 @@ private extension HomeCollectionViewCell {
 		}
 		
 		comicImageView.snp.makeConstraints { maker in
-			maker.top.equalToSuperview().offset(15)
-			maker.centerX.equalToSuperview()
-			maker.width.equalTo(120)
-			maker.height.equalTo(120)
+			maker.edges.equalToSuperview()
 		}
 		
 		comicTitleLabel.snp.makeConstraints { maker in
 			maker.left.equalToSuperview().offset(15)
 			maker.right.equalToSuperview().offset(-15)
-			maker.top.equalTo(comicImageView.snp.bottom).offset(8)
+			maker.bottom.equalTo(containerView.snp.bottom).offset(-15)
 		}
-		
 	}
 	
 	func setupViewProperties() {
@@ -55,8 +51,8 @@ private extension HomeCollectionViewCell {
 	}
 	
 	func setupContainerViewProperties() {
-		self.containerView.layer.cornerRadius = 15
-		self.containerView.clipsToBounds = true
+//		self.containerView.layer.cornerRadius = 15
+//		self.containerView.clipsToBounds = true
 		self.containerView.backgroundColor = UIColor.lightGray()
 	}
 	
@@ -68,7 +64,7 @@ private extension HomeCollectionViewCell {
 	func setupTitleLabelProperties() {
 		comicTitleLabel.numberOfLines = 2
 		comicTitleLabel.font = UIFont.boldSystemFont(ofSize: 18)
-		comicTitleLabel.textColor = UIColor.black
+		comicTitleLabel.textColor = UIColor.white
 		comicTitleLabel.textAlignment = .center
 	}
 }

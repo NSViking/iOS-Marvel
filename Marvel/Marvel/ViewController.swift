@@ -14,13 +14,5 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 	}
-
-	
-	// public key
-	// 114573488c8d05ec18053e0f6a278377
-	
-	// private key
-	// 4d7bd8aa550e88a016a921333f4891ef01510330
-
 }
 

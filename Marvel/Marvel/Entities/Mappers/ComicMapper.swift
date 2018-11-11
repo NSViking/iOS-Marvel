@@ -25,7 +25,7 @@ class ComicMapper {
 		})
 		
 		let thumbnailMapped = comicData.thumbnail.map({ imageData -> String in
-			return imageData.path + imageData.imageExtension
+			return imageData.path + "." + imageData.imageExtension
 		}) ?? ""
 		
 		let comic = Comic(id: comicData.id ?? 0,

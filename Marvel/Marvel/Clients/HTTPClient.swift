@@ -13,15 +13,20 @@ import RxSwift
 class HTTPClient: HTTPClientContract {
 	
 	let comicsProvider = ComicsAPIModule.getProvider(baseurl: "https://gateway.marvel.com:443/v1/public/comics")
-	let apiKey = "114573488c8d05ec18053e0f6a278377"
+	let apiKey = ""
 	
 	func getComics(pagination: Pagination) -> Single<[ComicData]> {
+		
+		let timestamp = String(Date().toMilliseconds())
+		let hash = self.createMarvelHash(timestamp: timestamp)
 		
 		return comicsProvider
 			.rx
 			.request(.get(apiKey: apiKey,
 						  limit: pagination.getObjectsPerPage(),
-						  offset: pagination.getCurrentPage()))
+						  offset: pagination.getCurrentPage(),
+						  timestamp: timestamp,
+						  hash: hash))
 			.filterSuccessfulStatusCodes()
 			.map(ResponseData.self)
 			.map { moyaResponse -> [ComicData] in
@@ -30,7 +35,24 @@ class HTTPClient: HTTPClientContract {
 				}
 				return dataResponse.results
 			}.catchError({ error -> Single<[ComicData]> in
-				return Single.error(HTTPClientError.genericError)
+				print(error.localizedDescription)
+ 				return Single.error(HTTPClientError.genericError)
 			})
+	}
+}
+
+private extension HTTPClient {
+	
+	func createMarvelHash(timestamp: String) -> String {
+		
+		let publicKey = apiKey
+		let privateKey = ""
+		
+		let completeString = "\(timestamp)\(privateKey)\(publicKey)"
+		
+		let md5Data = Hash.md5(string: completeString)
+		
+		let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
+		return md5Hex
 	}
 }
