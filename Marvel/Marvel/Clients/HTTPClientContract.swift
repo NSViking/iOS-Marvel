@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol HTTPClientContract {
-	func getComics(url: String) -> Single<[ComicData]>
+	func getComics(pagination: Pagination) -> Single<[ComicData]>
 }
 
 enum HTTPClientError: Swift.Error, CustomStringConvertible {

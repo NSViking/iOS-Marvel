@@ -20,9 +20,9 @@ class ComicsRepository {
 
 extension ComicsRepository: ComicsRepositoryContract {
 	
-	func getComics() -> Single<[Comic]> {
+	func getComics(pagination: Pagination) -> Single<[Comic]> {
 		return self.httpClient
-			.getComics(url: "")
+			.getComics(pagination: pagination)
 			.map { comicsDataArray -> [Comic] in
 				return comicsDataArray.map { userData -> Comic in
 					return Comic()//ComicMapper.mapUserDataToUser(userData: userData)
