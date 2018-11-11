@@ -60,6 +60,18 @@ extension HomePresenter: HomePresenterContract {
 				self.view?.showError()
 			}.disposed(by: disposeBag)
 	}
+	
+	func getDataSource() -> [ComicViewModel] {
+		return self.dataSource
+	}
+	
+	func getDataSourceCount() -> Int {
+		return self.dataSource.count
+	}
+	
+	func getDataAt(index: Int) -> ComicViewModel {
+		return self.dataSource[index]
+	}
 }
 
 private extension HomePresenter {

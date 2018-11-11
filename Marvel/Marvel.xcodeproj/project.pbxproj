@@ -43,6 +43,15 @@
 		5C17A7322198C7C900B9FC25 /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7312198C7C900B9FC25 /* HomeRouterMock.swift */; };
 		5C17A7342198C7E800B9FC25 /* HomeViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7332198C7E800B9FC25 /* HomeViewMock.swift */; };
 		5C17A73B2198C82F00B9FC25 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A73A2198C82F00B9FC25 /* HomeInteractorMock.swift */; };
+		5C17A73E2198CA6400B9FC25 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A73D2198CA6400B9FC25 /* HomeViewController.swift */; };
+		5C17A7402198CACA00B9FC25 /* HomeViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A73F2198CACA00B9FC25 /* HomeViewController+Layout.swift */; };
+		5C17A7422198CB3A00B9FC25 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7412198CB3A00B9FC25 /* HomeCollectionViewCell.swift */; };
+		5C17A7442198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7432198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift */; };
+		5C17A7472198CC8B00B9FC25 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7462198CC8B00B9FC25 /* Colors.swift */; };
+		5C17A7492198CCA700B9FC25 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7482198CCA700B9FC25 /* Fonts.swift */; };
+		5C17A74B2198CCC700B9FC25 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74A2198CCC700B9FC25 /* Devices.swift */; };
+		5C17A74D2198CD5300B9FC25 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74C2198CD5300B9FC25 /* Views.swift */; };
+		5C17A74F2198CE0100B9FC25 /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +117,15 @@
 		5C17A7312198C7C900B9FC25 /* HomeRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterMock.swift; sourceTree = "<group>"; };
 		5C17A7332198C7E800B9FC25 /* HomeViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewMock.swift; sourceTree = "<group>"; };
 		5C17A73A2198C82F00B9FC25 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
+		5C17A73D2198CA6400B9FC25 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5C17A73F2198CACA00B9FC25 /* HomeViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Layout.swift"; sourceTree = "<group>"; };
+		5C17A7412198CB3A00B9FC25 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C17A7432198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCollectionViewCell+Layout.swift"; sourceTree = "<group>"; };
+		5C17A7462198CC8B00B9FC25 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5C17A7482198CCA700B9FC25 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5C17A74A2198CCC700B9FC25 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		5C17A74C2198CD5300B9FC25 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +203,7 @@
 		5C17A6B82198A7CE00B9FC25 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A7452198CC8400B9FC25 /* Utils */,
 				5C17A70F2198BD1B00B9FC25 /* Modules */,
 				5C17A6FA2198ADAF00B9FC25 /* Entities */,
 				5C17A6F72198AD6400B9FC25 /* Clients */,
@@ -348,7 +367,10 @@
 		5C17A7202198C1C400B9FC25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A73C2198CA5000B9FC25 /* Components */,
 				5C17A7212198C1CA00B9FC25 /* HomeViewContract.swift */,
+				5C17A73D2198CA6400B9FC25 /* HomeViewController.swift */,
+				5C17A73F2198CACA00B9FC25 /* HomeViewController+Layout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +445,27 @@
 				5C17A73A2198C82F00B9FC25 /* HomeInteractorMock.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5C17A73C2198CA5000B9FC25 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7412198CB3A00B9FC25 /* HomeCollectionViewCell.swift */,
+				5C17A7432198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift */,
+				5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5C17A7452198CC8400B9FC25 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7462198CC8B00B9FC25 /* Colors.swift */,
+				5C17A7482198CCA700B9FC25 /* Fonts.swift */,
+				5C17A74A2198CCC700B9FC25 /* Devices.swift */,
+				5C17A74C2198CD5300B9FC25 /* Views.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,24 +723,33 @@
 				5C17A6BC2198A7CE00B9FC25 /* ViewController.swift in Sources */,
 				5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */,
 				5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */,
+				5C17A7402198CACA00B9FC25 /* HomeViewController+Layout.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
 				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,
 				5C17A7222198C1CA00B9FC25 /* HomeViewContract.swift in Sources */,
 				5C17A7252198C27E00B9FC25 /* ComicViewModel.swift in Sources */,
+				5C17A73E2198CA6400B9FC25 /* HomeViewController.swift in Sources */,
 				5C17A71A2198C15000B9FC25 /* HomePresenterContract.swift in Sources */,
 				5C17A6F92198AD6C00B9FC25 /* HTTPClientContract.swift in Sources */,
+				5C17A74B2198CCC700B9FC25 /* Devices.swift in Sources */,
 				5C17A7052198B58A00B9FC25 /* ComicsAPIModule.swift in Sources */,
 				5C17A7092198B6A500B9FC25 /* ResultsData.swift in Sources */,
+				5C17A7442198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift in Sources */,
 				5C17A7132198BD4200B9FC25 /* HomeInteractor.swift in Sources */,
+				5C17A74F2198CE0100B9FC25 /* HomeCollectionFooterView.swift in Sources */,
 				5C17A7032198B2A600B9FC25 /* ImageData.swift in Sources */,
 				5C17A7282198C30400B9FC25 /* ComicMapper.swift in Sources */,
 				5C17A71C2198C15400B9FC25 /* HomePresenter.swift in Sources */,
 				5C17A7072198B5F000B9FC25 /* HTTPClient.swift in Sources */,
 				5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */,
 				5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */,
+				5C17A7472198CC8B00B9FC25 /* Colors.swift in Sources */,
 				5C17A6EE2198ACD700B9FC25 /* ComicsRepository.swift in Sources */,
 				5C17A6BA2198A7CE00B9FC25 /* AppDelegate.swift in Sources */,
 				5C17A71F2198C1A000B9FC25 /* HomeRouterContract.swift in Sources */,
+				5C17A7492198CCA700B9FC25 /* Fonts.swift in Sources */,
+				5C17A7422198CB3A00B9FC25 /* HomeCollectionViewCell.swift in Sources */,
+				5C17A74D2198CD5300B9FC25 /* Views.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
