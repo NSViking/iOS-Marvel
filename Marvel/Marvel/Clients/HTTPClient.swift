@@ -13,12 +13,13 @@ import RxSwift
 class HTTPClient: HTTPClientContract {
 	
 	let comicsProvider = ComicsAPIModule.getProvider(baseurl: "https://gateway.marvel.com:443/v1/public/comics")
+	let apiKey = "114573488c8d05ec18053e0f6a278377"
 	
 	func getComics(url: String) -> Single<[ComicData]> {
 		
 		return comicsProvider
 			.rx
-			.request(.get())
+			.request(.get(apiKey: apiKey))
 			.filterSuccessfulStatusCodes()
 			.map(ResponseData.self)
 			.map { moyaResponse -> [ComicData] in

@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 
 public enum ComicsAPIModule {
-	case get()
+	case get(apiKey: String)
 }
 
 extension ComicsAPIModule {
@@ -40,14 +40,14 @@ extension ComicsAPIModule: Moya.TargetType {
 	
 	public var path: String {
 		switch self {
-		case .get():
+		case .get(apiKey: _):
 			return "/"
 		}
 	}
 	
 	public var method: Moya.Method {
 		switch self {
-		case .get():
+		case .get(apiKey: _):
 			return .get
 		}
 	}
@@ -58,8 +58,8 @@ extension ComicsAPIModule: Moya.TargetType {
 	
 	public var task: Task {
 		switch self {
-		case .get():
-			return .requestParameters(parameters: [:], encoding: URLEncoding.queryString)
+		case .get(let apiKey):
+			return .requestParameters(parameters: ["apikey" : apiKey], encoding: URLEncoding.queryString)
 		}
 	}
 	
