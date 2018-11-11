@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol ComicsRepositoryContract {
+	func getComics() -> Single<[Comic]>
+}
+
+enum ComicsRepositoryError: Swift.Error, CustomStringConvertible {
+	var description: String { return "ComicsRepositoryError error" }
+	case mapping
+	case generic
+}

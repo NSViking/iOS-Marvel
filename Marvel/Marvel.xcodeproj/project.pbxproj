@@ -21,6 +21,7 @@
 		5C17A6F62198AD4B00B9FC25 /* HTTPClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A6F52198AD4B00B9FC25 /* HTTPClientMock.swift */; };
 		5C17A6F92198AD6C00B9FC25 /* HTTPClientContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A6F82198AD6C00B9FC25 /* HTTPClientContract.swift */; };
 		5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A6FC2198ADC500B9FC25 /* ComicData.swift */; };
+		5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A6FF2198AF9E00B9FC25 /* Comic.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		5C17A6F52198AD4B00B9FC25 /* HTTPClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientMock.swift; sourceTree = "<group>"; };
 		5C17A6F82198AD6C00B9FC25 /* HTTPClientContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientContract.swift; sourceTree = "<group>"; };
 		5C17A6FC2198ADC500B9FC25 /* ComicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicData.swift; sourceTree = "<group>"; };
+		5C17A6FF2198AF9E00B9FC25 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		5C17A6FA2198ADAF00B9FC25 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A6FE2198AF9200B9FC25 /* DomainData */,
 				5C17A6FB2198ADBB00B9FC25 /* NetworkData */,
 			);
 			path = Entities;
@@ -221,6 +224,14 @@
 				5C17A6FC2198ADC500B9FC25 /* ComicData.swift */,
 			);
 			path = NetworkData;
+			sourceTree = "<group>";
+		};
+		5C17A6FE2198AF9200B9FC25 /* DomainData */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A6FF2198AF9E00B9FC25 /* Comic.swift */,
+			);
+			path = DomainData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +488,7 @@
 			files = (
 				5C17A6BC2198A7CE00B9FC25 /* ViewController.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
+				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,
 				5C17A6F92198AD6C00B9FC25 /* HTTPClientContract.swift in Sources */,
 				5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */,
 				5C17A6EE2198ACD700B9FC25 /* ComicsRepository.swift in Sources */,
