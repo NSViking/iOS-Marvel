@@ -9,8 +9,8 @@
 import Foundation
 
 struct ImageData: Codable {
-	var path: String?
-	var imageExtension: String?
+	var path: String = ""
+	var imageExtension: String = ""
 	
 	enum CodingKeys: String, CodingKey
 	{

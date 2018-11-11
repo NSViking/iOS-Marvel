@@ -31,6 +31,12 @@
 		5C17A7132198BD4200B9FC25 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7122198BD4200B9FC25 /* HomeInteractor.swift */; };
 		5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7142198BD4800B9FC25 /* HomeInteractorContract.swift */; };
 		5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7162198BE9500B9FC25 /* Pagination.swift */; };
+		5C17A71A2198C15000B9FC25 /* HomePresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7192198C15000B9FC25 /* HomePresenterContract.swift */; };
+		5C17A71C2198C15400B9FC25 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A71B2198C15400B9FC25 /* HomePresenter.swift */; };
+		5C17A71F2198C1A000B9FC25 /* HomeRouterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A71E2198C1A000B9FC25 /* HomeRouterContract.swift */; };
+		5C17A7222198C1CA00B9FC25 /* HomeViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7212198C1CA00B9FC25 /* HomeViewContract.swift */; };
+		5C17A7252198C27E00B9FC25 /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7242198C27E00B9FC25 /* ComicViewModel.swift */; };
+		5C17A7282198C30400B9FC25 /* ComicMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7272198C30400B9FC25 /* ComicMapper.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +90,12 @@
 		5C17A7122198BD4200B9FC25 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		5C17A7142198BD4800B9FC25 /* HomeInteractorContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorContract.swift; sourceTree = "<group>"; };
 		5C17A7162198BE9500B9FC25 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		5C17A7192198C15000B9FC25 /* HomePresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterContract.swift; sourceTree = "<group>"; };
+		5C17A71B2198C15400B9FC25 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		5C17A71E2198C1A000B9FC25 /* HomeRouterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterContract.swift; sourceTree = "<group>"; };
+		5C17A7212198C1CA00B9FC25 /* HomeViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContract.swift; sourceTree = "<group>"; };
+		5C17A7242198C27E00B9FC25 /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewModel.swift; sourceTree = "<group>"; };
+		5C17A7272198C30400B9FC25 /* ComicMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicMapper.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +246,8 @@
 		5C17A6FA2198ADAF00B9FC25 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A7262198C2FC00B9FC25 /* Mappers */,
+				5C17A7232198C26D00B9FC25 /* ViewData */,
 				5C17A6FE2198AF9200B9FC25 /* DomainData */,
 				5C17A6FB2198ADBB00B9FC25 /* NetworkData */,
 			);
@@ -279,6 +293,9 @@
 		5C17A7102198BD2300B9FC25 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A7202198C1C400B9FC25 /* View */,
+				5C17A71D2198C19600B9FC25 /* Router */,
+				5C17A7182198C14200B9FC25 /* Presenter */,
 				5C17A7112198BD3600B9FC25 /* Interactor */,
 			);
 			path = Home;
@@ -291,6 +308,47 @@
 				5C17A7142198BD4800B9FC25 /* HomeInteractorContract.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5C17A7182198C14200B9FC25 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7192198C15000B9FC25 /* HomePresenterContract.swift */,
+				5C17A71B2198C15400B9FC25 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5C17A71D2198C19600B9FC25 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A71E2198C1A000B9FC25 /* HomeRouterContract.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5C17A7202198C1C400B9FC25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7212198C1CA00B9FC25 /* HomeViewContract.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C17A7232198C26D00B9FC25 /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7242198C27E00B9FC25 /* ComicViewModel.swift */,
+			);
+			path = ViewData;
+			sourceTree = "<group>";
+		};
+		5C17A7262198C2FC00B9FC25 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7272198C30400B9FC25 /* ComicMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,16 +608,22 @@
 				5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
 				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,
+				5C17A7222198C1CA00B9FC25 /* HomeViewContract.swift in Sources */,
+				5C17A7252198C27E00B9FC25 /* ComicViewModel.swift in Sources */,
+				5C17A71A2198C15000B9FC25 /* HomePresenterContract.swift in Sources */,
 				5C17A6F92198AD6C00B9FC25 /* HTTPClientContract.swift in Sources */,
 				5C17A7052198B58A00B9FC25 /* ComicsAPIModule.swift in Sources */,
 				5C17A7092198B6A500B9FC25 /* ResultsData.swift in Sources */,
 				5C17A7132198BD4200B9FC25 /* HomeInteractor.swift in Sources */,
 				5C17A7032198B2A600B9FC25 /* ImageData.swift in Sources */,
+				5C17A7282198C30400B9FC25 /* ComicMapper.swift in Sources */,
+				5C17A71C2198C15400B9FC25 /* HomePresenter.swift in Sources */,
 				5C17A7072198B5F000B9FC25 /* HTTPClient.swift in Sources */,
 				5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */,
 				5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */,
 				5C17A6EE2198ACD700B9FC25 /* ComicsRepository.swift in Sources */,
 				5C17A6BA2198A7CE00B9FC25 /* AppDelegate.swift in Sources */,
+				5C17A71F2198C1A000B9FC25 /* HomeRouterContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
