@@ -8,11 +8,15 @@
 
 import Foundation
 
-class ComicData: Codable {
-	var id: String?
-	var name: String?
+struct ComicData: Codable {
+	var id: Int?
+	var title: String?
+	var description: String?
+	var format: String?
+	var thumbnail: ImageData?
+	var images: [ImageData]
 	
-	class func decode(data: Data) -> ComicData {
+	static func decode(data: Data) -> ComicData {
 		let decoder = JSONDecoder()
 		let userData = try! decoder.decode(ComicData.self, from: data)
 		return userData

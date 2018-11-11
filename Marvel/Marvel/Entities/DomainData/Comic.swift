@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Comic {
+struct Comic {
 	var id: String = ""
 	var name: String = ""
+	var description: String = ""
+	var format: String = ""
+	var imagesUrls: [String] = []
+	var thumbnailUrl: String = ""
 }
