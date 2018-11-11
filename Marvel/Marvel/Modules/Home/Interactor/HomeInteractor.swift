@@ -11,7 +11,7 @@ import RxSwift
 
 class HomeInteractor {
 	private let repo: ComicsRepositoryContract
-	private let pagination: Pagination
+	let pagination: Pagination
 	
 	init(repo: ComicsRepositoryContract,
 		 pagination: Pagination) {

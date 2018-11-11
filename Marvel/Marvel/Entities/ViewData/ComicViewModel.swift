@@ -1,5 +1,5 @@
 //
-//  Comic.swift
+//  ComicViewModel.swift
 //  Marvel
 //
 //  Created by Víctor Vicente on 11/11/2018.
@@ -8,11 +8,9 @@
 
 import Foundation
 
-struct Comic {
-	var id: Int = 0
+struct ComicViewModel {
+	
+	var comicId: Int = 0
 	var title: String = ""
-	var description: String = ""
-	var format: String = ""
-	var imagesUrls: [String] = []
-	var thumbnailUrl: String = ""
+	var image: String = ""
 }
