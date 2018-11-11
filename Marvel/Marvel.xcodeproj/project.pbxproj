@@ -28,6 +28,9 @@
 		5C17A7092198B6A500B9FC25 /* ResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7082198B6A500B9FC25 /* ResultsData.swift */; };
 		5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A70A2198B6BD00B9FC25 /* ResponseData.swift */; };
 		5C17A70E2198B84100B9FC25 /* ComicsAPIModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A70D2198B84100B9FC25 /* ComicsAPIModuleTests.swift */; };
+		5C17A7132198BD4200B9FC25 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7122198BD4200B9FC25 /* HomeInteractor.swift */; };
+		5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7142198BD4800B9FC25 /* HomeInteractorContract.swift */; };
+		5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7162198BE9500B9FC25 /* Pagination.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		5C17A7082198B6A500B9FC25 /* ResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsData.swift; sourceTree = "<group>"; };
 		5C17A70A2198B6BD00B9FC25 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		5C17A70D2198B84100B9FC25 /* ComicsAPIModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsAPIModuleTests.swift; sourceTree = "<group>"; };
+		5C17A7122198BD4200B9FC25 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		5C17A7142198BD4800B9FC25 /* HomeInteractorContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorContract.swift; sourceTree = "<group>"; };
+		5C17A7162198BE9500B9FC25 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 		5C17A6B82198A7CE00B9FC25 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A70F2198BD1B00B9FC25 /* Modules */,
 				5C17A6FA2198ADAF00B9FC25 /* Entities */,
 				5C17A6F72198AD6400B9FC25 /* Clients */,
 				5C17A6EC2198ACC200B9FC25 /* Repository */,
@@ -171,8 +178,8 @@
 		5C17A6CD2198A7D100B9FC25 /* MarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				5C17A70C2198B83300B9FC25 /* APIModule */,
 				5C17A6F42198AD3300B9FC25 /* Mock */,
+				5C17A70C2198B83300B9FC25 /* APIModule */,
 				5C17A6F12198ACF000B9FC25 /* Repository */,
 				5C17A6CE2198A7D100B9FC25 /* MarvelTests.swift */,
 				5C17A6D02198A7D100B9FC25 /* Info.plist */,
@@ -248,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				5C17A6FF2198AF9E00B9FC25 /* Comic.swift */,
+				5C17A7162198BE9500B9FC25 /* Pagination.swift */,
 			);
 			path = DomainData;
 			sourceTree = "<group>";
@@ -258,6 +266,31 @@
 				5C17A70D2198B84100B9FC25 /* ComicsAPIModuleTests.swift */,
 			);
 			path = APIModule;
+			sourceTree = "<group>";
+		};
+		5C17A70F2198BD1B00B9FC25 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7102198BD2300B9FC25 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5C17A7102198BD2300B9FC25 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7112198BD3600B9FC25 /* Interactor */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5C17A7112198BD3600B9FC25 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7122198BD4200B9FC25 /* HomeInteractor.swift */,
+				5C17A7142198BD4800B9FC25 /* HomeInteractorContract.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,15 +546,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C17A6BC2198A7CE00B9FC25 /* ViewController.swift in Sources */,
+				5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */,
 				5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
 				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,
 				5C17A6F92198AD6C00B9FC25 /* HTTPClientContract.swift in Sources */,
 				5C17A7052198B58A00B9FC25 /* ComicsAPIModule.swift in Sources */,
 				5C17A7092198B6A500B9FC25 /* ResultsData.swift in Sources */,
+				5C17A7132198BD4200B9FC25 /* HomeInteractor.swift in Sources */,
 				5C17A7032198B2A600B9FC25 /* ImageData.swift in Sources */,
 				5C17A7072198B5F000B9FC25 /* HTTPClient.swift in Sources */,
 				5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */,
+				5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */,
 				5C17A6EE2198ACD700B9FC25 /* ComicsRepository.swift in Sources */,
 				5C17A6BA2198A7CE00B9FC25 /* AppDelegate.swift in Sources */,
 			);

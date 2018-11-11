@@ -18,10 +18,14 @@ class ComicsAPIModuleTests: XCTestCase {
 		
 		let baseUrl = "https://gateway.marvel.com:443/v1/public/comics"
 		let apiKey = "randomApiKey"
+		let limit = 5
+		let offset = 0
 		
-		let endpoint = ComicsAPIModule.getProvider(baseurl: baseUrl).endpoint(ComicsAPIModule.get(apiKey: apiKey))
+		let endpoint = ComicsAPIModule
+			.getProvider(baseurl: baseUrl)
+			.endpoint(ComicsAPIModule.get(apiKey: apiKey, limit: limit, offset: offset))
 		XCTAssertTrue(endpoint.method == .get)
 		let completeURL = try! endpoint.urlRequest().url?.absoluteString
-		XCTAssertTrue(completeURL == "\(baseUrl)/?apikey=\(apiKey)")
+		XCTAssertTrue(completeURL == "\(baseUrl)/?apikey=\(apiKey)&limit=\(limit)&offset=\(offset)")
 	}
 }
