@@ -52,6 +52,8 @@
 		5C17A74B2198CCC700B9FC25 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74A2198CCC700B9FC25 /* Devices.swift */; };
 		5C17A74D2198CD5300B9FC25 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74C2198CD5300B9FC25 /* Views.swift */; };
 		5C17A74F2198CE0100B9FC25 /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */; };
+		5C17A7512198CEFD00B9FC25 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7502198CEFD00B9FC25 /* HomeConfigurator.swift */; };
+		5C17A7532198CF3000B9FC25 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7522198CF3000B9FC25 /* HomeRouter.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		5C17A74A2198CCC700B9FC25 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		5C17A74C2198CD5300B9FC25 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
+		5C17A7502198CEFD00B9FC25 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		5C17A7522198CF3000B9FC25 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				5C17A71D2198C19600B9FC25 /* Router */,
 				5C17A7182198C14200B9FC25 /* Presenter */,
 				5C17A7112198BD3600B9FC25 /* Interactor */,
+				5C17A7502198CEFD00B9FC25 /* HomeConfigurator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				5C17A71E2198C1A000B9FC25 /* HomeRouterContract.swift */,
+				5C17A7522198CF3000B9FC25 /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -740,6 +746,8 @@
 				5C17A7032198B2A600B9FC25 /* ImageData.swift in Sources */,
 				5C17A7282198C30400B9FC25 /* ComicMapper.swift in Sources */,
 				5C17A71C2198C15400B9FC25 /* HomePresenter.swift in Sources */,
+				5C17A7512198CEFD00B9FC25 /* HomeConfigurator.swift in Sources */,
+				5C17A7532198CF3000B9FC25 /* HomeRouter.swift in Sources */,
 				5C17A7072198B5F000B9FC25 /* HTTPClient.swift in Sources */,
 				5C17A6FD2198ADC500B9FC25 /* ComicData.swift in Sources */,
 				5C17A7172198BE9500B9FC25 /* Pagination.swift in Sources */,
