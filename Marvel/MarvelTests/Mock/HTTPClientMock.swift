@@ -29,7 +29,13 @@ class HTTPClientMock: NSObject, Mock {
 extension HTTPClientMock: HTTPClientContract {
 	
 	func getComics(url: String) -> Single<[ComicData]> {
-		let userData = ComicData()
+		let userData = ComicData(id: 0,
+								 title: "",
+								 description: "",
+								 format: "",
+								 thumbnail: nil,
+								 images: [])
+		
 		return callHandler.accept(Single.just([userData]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[ComicData]>
 	}
 }

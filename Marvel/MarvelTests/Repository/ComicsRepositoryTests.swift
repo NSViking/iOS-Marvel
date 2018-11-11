@@ -27,7 +27,14 @@ class UserRepositoryTests: XCTestCase {
 	
 	func testGetComics() {
 		
-		let mockResponse: [ComicData] = [ComicData()]
+		let comic = ComicData(id: 0,
+							   title: "",
+							   description: "",
+							   format: "",
+							   thumbnail: nil,
+							   images: [])
+		let mockResponse: [ComicData] = [comic]
+		
 		let _ = mockClient.when()
 			.call(withReturnValue: mockClient.getComics(url: ""))
 			.thenReturn(Single.just(mockResponse))
