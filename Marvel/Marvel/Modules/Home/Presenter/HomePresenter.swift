@@ -30,6 +30,11 @@ class HomePresenter {
 }
 
 extension HomePresenter: HomePresenterContract {
+	
+	func setupDataSource(comicArray: [ComicViewModel]) {
+		self.dataSource = comicArray
+	}
+	
 	func goToDetail(index: Int) {
 		
 		let comicK = self.dataSource[index]
@@ -38,8 +43,8 @@ extension HomePresenter: HomePresenterContract {
 	
 	func setupData() {
 		_ = self.interactor.getComics()
-			.subscribe(onSuccess: { usersDataSource in
-				self.dataSource = []//self.mapArrayToViewModel(users: usersDataSource)
+			.subscribe(onSuccess: { comicsDataSource in
+				self.dataSource = self.mapArrayToViewModel(comics: comicsDataSource)
 				self.view?.reloadData()
 			}) { error in
 				self.view?.showError()
@@ -48,8 +53,8 @@ extension HomePresenter: HomePresenterContract {
 	
 	func getMoreData() {
 		_ = self.interactor.getMoreComics()
-			.subscribe(onSuccess: { usersDataSource in
-				self.dataSource = []//self.mapArrayToViewModel(users: usersDataSource)
+			.subscribe(onSuccess: { comicsDataSource in
+				self.dataSource = self.mapArrayToViewModel(comics: comicsDataSource)
 				self.view?.reloadData()
 			}) { error in
 				self.view?.showError()
