@@ -14,7 +14,6 @@ protocol HomePresenterContract {
 	
 	func goToDetail(index: Int)
 	
-	func getDataSource() -> [ComicViewModel]
 	func getDataSourceCount() -> Int
 	func getDataAt(index: Int) -> ComicViewModel
 }

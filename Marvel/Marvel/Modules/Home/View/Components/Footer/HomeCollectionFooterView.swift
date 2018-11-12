@@ -42,7 +42,7 @@ extension HomeCollectionFooterView {
 	}
 	
 	func setupLoading() {
-		loading.style = .gray
+		loading.style = .white
 		loading.translatesAutoresizingMaskIntoConstraints = false
 		loading.tintColor = UIColor.gray
 		loading.tag = kFooterViewTag

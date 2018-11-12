@@ -34,6 +34,7 @@ private extension HomeViewController {
 	func setupViewProperties() {
 		self.navigationController?.navigationBar.barStyle = .black
 		self.navigationController?.view.backgroundColor = UIColor.black
+		self.navigationController?.navigationBar.tintColor = UIColor.white
 		
 		self.view.backgroundColor = UIColor.black
 		self.navigationController?.navigationBar.prefersLargeTitles = true

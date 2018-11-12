@@ -32,7 +32,8 @@ class UserRepositoryTests: XCTestCase {
 							   description: "",
 							   format: "",
 							   thumbnail: nil,
-							   images: [])
+							   images: [],
+							   price: "")
 		let mockResponse: [ComicData] = [comic]
 		let pagination = Pagination(page: 0, total: 5)
 		

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol HomeRouterContract {
-	func goToComicDetail(comicId: Int)
+	func goToComicDetail(comic: Comic)
 }

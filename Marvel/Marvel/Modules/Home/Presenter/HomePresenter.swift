@@ -15,7 +15,7 @@ class HomePresenter {
 	var interactor: HomeInteractorContract
 	weak var view: HomeViewContract?
 	
-	private var dataSource: [ComicViewModel] = []
+	private var dataSource: [Comic] = []
 	
 	//RxSwift
 	let disposeBag = DisposeBag()
@@ -31,20 +31,20 @@ class HomePresenter {
 
 extension HomePresenter: HomePresenterContract {
 	
-	func setupDataSource(comicArray: [ComicViewModel]) {
+	func setupDataSource(comicArray: [Comic]) {
 		self.dataSource = comicArray
 	}
 	
 	func goToDetail(index: Int) {
 		
 		let comicK = self.dataSource[index]
-		self.router.goToComicDetail(comicId: comicK.comicId)
+		self.router.goToComicDetail(comic: comicK)
 	}
 	
 	func setupData() {
 		_ = self.interactor.getComics()
 			.subscribe(onSuccess: { comicsDataSource in
-				self.dataSource = self.mapArrayToViewModel(comics: comicsDataSource)
+				self.dataSource = comicsDataSource
 				self.view?.reloadData()
 			}) { error in
 				self.view?.showError()
@@ -54,17 +54,11 @@ extension HomePresenter: HomePresenterContract {
 	func getMoreData() {
 		_ = self.interactor.getMoreComics()
 			.subscribe(onSuccess: { comicsDataSource in
-				
-				let moreData = self.mapArrayToViewModel(comics: comicsDataSource)
-				self.dataSource.append(contentsOf: moreData)
+				self.dataSource.append(contentsOf: comicsDataSource)
 				self.view?.reloadData()
 			}) { error in
 				self.view?.showError()
 			}.disposed(by: disposeBag)
-	}
-	
-	func getDataSource() -> [ComicViewModel] {
-		return self.dataSource
 	}
 	
 	func getDataSourceCount() -> Int {
@@ -72,15 +66,13 @@ extension HomePresenter: HomePresenterContract {
 	}
 	
 	func getDataAt(index: Int) -> ComicViewModel {
-		return self.dataSource[index]
+		let comicK = self.dataSource[index]
+		return self.mapComicToViewModel(comic: comicK)
 	}
 }
 
 private extension HomePresenter {
-	func mapArrayToViewModel(comics: [Comic]) -> [ComicViewModel] {
-		let dataSource = comics.map { comic -> ComicViewModel in
-			return ComicMapper.mapComicToComicViewModel(comic: comic)
-		}
-		return dataSource
+	func mapComicToViewModel(comic: Comic) -> ComicViewModel {
+		return ComicMapper.mapComicToComicViewModel(comic: comic)
 	}
 }

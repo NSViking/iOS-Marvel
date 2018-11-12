@@ -59,6 +59,13 @@
 		5C17A75D2198F2FE00B9FC25 /* HomeEmptyImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A75C2198F2FE00B9FC25 /* HomeEmptyImageCollectionViewCell.swift */; };
 		5C17A75F2198F32000B9FC25 /* HomeEmptyImageCollectionViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A75E2198F32000B9FC25 /* HomeEmptyImageCollectionViewCell+Layout.swift */; };
 		5C17A7642198F4E800B9FC25 /* HomeCollectionViewCellContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7632198F4E800B9FC25 /* HomeCollectionViewCellContract.swift */; };
+		5C17A7692198FAA500B9FC25 /* DetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7682198FAA500B9FC25 /* DetailConfigurator.swift */; };
+		5C17A76D2198FADE00B9FC25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A76C2198FADE00B9FC25 /* DetailViewController.swift */; };
+		5C17A76F2198FAE600B9FC25 /* DetailViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A76E2198FAE600B9FC25 /* DetailViewController+Layout.swift */; };
+		5C17A7722198FE2900B9FC25 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7712198FE2900B9FC25 /* DetailHeaderView.swift */; };
+		5C17A775219900F200B9FC25 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A774219900F200B9FC25 /* DetailPresenter.swift */; };
+		5C17A777219900FA00B9FC25 /* DetailPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A776219900FA00B9FC25 /* DetailPresenterContract.swift */; };
+		5C17A7792199015F00B9FC25 /* DetailViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7782199015F00B9FC25 /* DetailViewContract.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +148,13 @@
 		5C17A75C2198F2FE00B9FC25 /* HomeEmptyImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEmptyImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C17A75E2198F32000B9FC25 /* HomeEmptyImageCollectionViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeEmptyImageCollectionViewCell+Layout.swift"; sourceTree = "<group>"; };
 		5C17A7632198F4E800B9FC25 /* HomeCollectionViewCellContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellContract.swift; sourceTree = "<group>"; };
+		5C17A7682198FAA500B9FC25 /* DetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConfigurator.swift; sourceTree = "<group>"; };
+		5C17A76C2198FADE00B9FC25 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5C17A76E2198FAE600B9FC25 /* DetailViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Layout.swift"; sourceTree = "<group>"; };
+		5C17A7712198FE2900B9FC25 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		5C17A774219900F200B9FC25 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		5C17A776219900FA00B9FC25 /* DetailPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterContract.swift; sourceTree = "<group>"; };
+		5C17A7782199015F00B9FC25 /* DetailViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContract.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -338,6 +352,7 @@
 		5C17A70F2198BD1B00B9FC25 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5C17A7652198FA8C00B9FC25 /* Detail */,
 				5C17A7102198BD2300B9FC25 /* Home */,
 			);
 			path = Modules;
@@ -513,6 +528,44 @@
 				5C17A74E2198CE0100B9FC25 /* HomeCollectionFooterView.swift */,
 			);
 			path = Footer;
+			sourceTree = "<group>";
+		};
+		5C17A7652198FA8C00B9FC25 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A773219900E600B9FC25 /* Presenter */,
+				5C17A7662198FA9400B9FC25 /* View */,
+				5C17A7682198FAA500B9FC25 /* DetailConfigurator.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5C17A7662198FA9400B9FC25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7702198FE1D00B9FC25 /* Components */,
+				5C17A76C2198FADE00B9FC25 /* DetailViewController.swift */,
+				5C17A76E2198FAE600B9FC25 /* DetailViewController+Layout.swift */,
+				5C17A7782199015F00B9FC25 /* DetailViewContract.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C17A7702198FE1D00B9FC25 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A7712198FE2900B9FC25 /* DetailHeaderView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5C17A773219900E600B9FC25 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A774219900F200B9FC25 /* DetailPresenter.swift */,
+				5C17A776219900FA00B9FC25 /* DetailPresenterContract.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -768,23 +821,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C17A76D2198FADE00B9FC25 /* DetailViewController.swift in Sources */,
 				5C17A6BC2198A7CE00B9FC25 /* ViewController.swift in Sources */,
 				5C17A75B2198D83100B9FC25 /* Dates.swift in Sources */,
 				5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */,
 				5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */,
+				5C17A775219900F200B9FC25 /* DetailPresenter.swift in Sources */,
 				5C17A7402198CACA00B9FC25 /* HomeViewController+Layout.swift in Sources */,
+				5C17A7792199015F00B9FC25 /* DetailViewContract.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
 				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,
+				5C17A7692198FAA500B9FC25 /* DetailConfigurator.swift in Sources */,
+				5C17A777219900FA00B9FC25 /* DetailPresenterContract.swift in Sources */,
 				5C17A7222198C1CA00B9FC25 /* HomeViewContract.swift in Sources */,
 				5C17A7252198C27E00B9FC25 /* ComicViewModel.swift in Sources */,
 				5C17A73E2198CA6400B9FC25 /* HomeViewController.swift in Sources */,
 				5C17A71A2198C15000B9FC25 /* HomePresenterContract.swift in Sources */,
+				5C17A76F2198FAE600B9FC25 /* DetailViewController+Layout.swift in Sources */,
 				5C17A6F92198AD6C00B9FC25 /* HTTPClientContract.swift in Sources */,
 				5C17A74B2198CCC700B9FC25 /* Devices.swift in Sources */,
 				5C17A7052198B58A00B9FC25 /* ComicsAPIModule.swift in Sources */,
 				5C17A7092198B6A500B9FC25 /* ResultsData.swift in Sources */,
 				5C17A75F2198F32000B9FC25 /* HomeEmptyImageCollectionViewCell+Layout.swift in Sources */,
 				5C17A7442198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift in Sources */,
+				5C17A7722198FE2900B9FC25 /* DetailHeaderView.swift in Sources */,
 				5C17A7132198BD4200B9FC25 /* HomeInteractor.swift in Sources */,
 				5C17A74F2198CE0100B9FC25 /* HomeCollectionFooterView.swift in Sources */,
 				5C17A7032198B2A600B9FC25 /* ImageData.swift in Sources */,

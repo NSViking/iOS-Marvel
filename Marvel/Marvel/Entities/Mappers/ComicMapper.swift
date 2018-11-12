@@ -13,7 +13,8 @@ class ComicMapper {
 	class func mapComicToComicViewModel(comic: Comic) -> ComicViewModel {
 		let comicViewModel = ComicViewModel(comicId: comic.id,
 											title: comic.title,
-											image: comic.thumbnailUrl)
+											image: comic.thumbnailUrl,
+											price: comic.price)
 		
 		return comicViewModel
 	}
@@ -33,7 +34,8 @@ class ComicMapper {
 						  description: comicData.description ?? "",
 						  format: comicData.format ?? "",
 						  imagesUrls: imagesMapped,
-						  thumbnailUrl: thumbnailMapped)
+						  thumbnailUrl: thumbnailMapped,
+						  price: comicData.price ?? "")
 		return comic
 	}
 }

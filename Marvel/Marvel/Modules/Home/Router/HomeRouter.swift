@@ -20,7 +20,9 @@ class HomeRouter {
 
 extension HomeRouter: HomeRouterContract {
 	
-	func goToComicDetail(comicId: Int) {
+	func goToComicDetail(comic: Comic) {
+		let detailVC = DetailConfigurator.createDetailStack(comic: comic)
 		
+		self.viewController.navigationController?.pushViewController(detailVC, animated: true)
 	}
 }

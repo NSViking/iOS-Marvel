@@ -34,7 +34,8 @@ extension HTTPClientMock: HTTPClientContract {
 								 description: "",
 								 format: "",
 								 thumbnail: nil,
-								 images: [])
+								 images: [],
+								 price: "")
 		
 		return callHandler.accept(Single.just([userData]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[ComicData]>
 	}
