@@ -15,6 +15,7 @@ struct ComicData: Codable {
 	var format: String?
 	var thumbnail: ImageData?
 	var images: [ImageData]
+	var price: String?
 	
 	static func decode(data: Data) -> ComicData {
 		let decoder = JSONDecoder()

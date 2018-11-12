@@ -61,7 +61,7 @@ class HomeInteractorTests: XCTestCase {
 				.toBlocking()
 				.single()
 			XCTAssertTrue(results.count == 0)
-			XCTAssertTrue(self.interactor.pagination.getCurrentPage() == 5)
+			XCTAssertTrue(self.interactor.pagination.getCurrentPage() == 6)
 		} catch {
 			XCTFail()
 		}

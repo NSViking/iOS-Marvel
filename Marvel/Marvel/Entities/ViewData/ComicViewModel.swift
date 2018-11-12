@@ -13,6 +13,7 @@ struct ComicViewModel {
 	var comicId: Int = 0
 	var title: String = ""
 	var image: String = ""
+	var price: String = ""
 	
 	func isEmptyImage() -> Bool {
 		if self.image.contains("image_not_available") || self.image == "" {

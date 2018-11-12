@@ -75,9 +75,9 @@ class HomePresenterTests: XCTestCase {
 	
 	func testGoToDetail() {
 		
-		self.presenter.setupDataSource(comicArray: [ComicViewModel()])
+		self.presenter.setupDataSource(comicArray: [Comic()])
 		presenter.goToDetail(index: 0)
 		
-		let _ = mockRouter.verify(verificationMode: Once()).goToComicDetail(comicId: 0)
+		let _ = mockRouter.verify(verificationMode: Once()).goToComicDetail(comic: Comic())
 	}
 }

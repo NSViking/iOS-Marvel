@@ -15,4 +15,5 @@ struct Comic {
 	var format: String = ""
 	var imagesUrls: [String] = []
 	var thumbnailUrl: String = ""
+	var price: String = ""
 }

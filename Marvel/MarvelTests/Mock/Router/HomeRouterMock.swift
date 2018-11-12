@@ -27,8 +27,7 @@ class HomeRouterMock: NSObject, Mock {
 }
 
 extension HomeRouterMock: HomeRouterContract {
-	
-	func goToComicDetail(comicId: Int) {
+	func goToComicDetail(comic: Comic) {
 		callHandler.accept(nil, ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil)
 	}
 }

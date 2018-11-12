@@ -11,4 +11,7 @@ import UIKit
 
 extension UIFont {
 	
+	static func bold(size: CGFloat) -> UIFont {
+		return UIFont.boldSystemFont(ofSize: size)
+	}
 }
