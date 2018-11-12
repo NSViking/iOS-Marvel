@@ -15,10 +15,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
 	var containerView = UIView()
 	var comicImageView = UIImageView()
 	var comicTitleLabel = UILabel()
+	
+	var gradientView: UIView = UIView()
+	var gradientLayer: CAGradientLayer = CAGradientLayer()
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupUI()
+	}
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		gradientLayer.frame = bounds
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -29,10 +37,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
 		super.prepareForReuse()
 		comicImageView.image = nil
 	}
-	
+}
+
+extension HomeCollectionViewCell: HomeCollectionViewCellContract {
 	func configure(title: String, imageUrl: String) {
 		
 		comicTitleLabel.text = title
+		
+		if imageUrl.contains("image_not_available") {
+			comicImageView.contentMode = .scaleAspectFit
+		} else {
+			comicImageView.contentMode = .scaleAspectFill
+		}
 		
 		if let url = URL(string: imageUrl) {
 			comicImageView.af_setImage(withURL: url,

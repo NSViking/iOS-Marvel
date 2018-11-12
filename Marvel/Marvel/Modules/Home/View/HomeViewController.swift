@@ -45,18 +45,28 @@ extension HomeViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier(), for: indexPath)
-			as? HomeCollectionViewCell else {
-				return UICollectionViewCell()
+		guard let comicViewModel = self.presenter?.getDataAt(index: indexPath.row) else {
+			return UICollectionViewCell()
 		}
 		
-		guard let comicViewModel = self.presenter?.getDataAt(index: indexPath.row) else {
-			return cell
+		var cell: HomeCollectionViewCellContract?
+		
+		if comicViewModel.isEmptyImage() {
+			cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeEmptyImageCollectionViewCell.identifier(), for: indexPath)
+				as? HomeEmptyImageCollectionViewCell
+		} else {
+			cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier(), for: indexPath)
+				as? HomeCollectionViewCell
 		}
-		cell.configure(title: comicViewModel.title,
+
+		cell?.configure(title: comicViewModel.title,
 					   imageUrl: comicViewModel.image)
 		
-		return cell
+		guard let safeCell = cell as? UICollectionViewCell else {
+			return UICollectionViewCell()
+		}
+		
+		return safeCell
 	}
 }
 
@@ -72,11 +82,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 		if Devices.isIpadOrIpadScreenSize() {
 			numberOfColumns = Devices.isDeviceLandscape() || Devices.isLandscapeForStart() ? 4 : 3
 		} else {
-			numberOfColumns = 1
+			numberOfColumns = 2
 		}
 		
 		let insets = collectionView.contentInset.left + collectionView.contentInset.right
-		let width = (collectionView.frame.width - insets) / CGFloat(numberOfColumns)
+		let width = (collectionView.frame.width / CGFloat(numberOfColumns)) - insets
 		return CGSize(width: width, height: 300.0)
 	}
 }
