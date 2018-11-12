@@ -24,6 +24,10 @@ class HomeViewController: UIViewController {
 	func setupData() {
 		self.presenter?.setupData()
 	}
+    
+    @objc func filterButtonDidPress() {
+        
+    }
 }
 
 extension HomeViewController: HomeViewContract {
