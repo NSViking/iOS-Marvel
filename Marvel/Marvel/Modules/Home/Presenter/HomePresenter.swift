@@ -54,11 +54,25 @@ extension HomePresenter: HomePresenterContract {
 	func getMoreData() {
 		_ = self.interactor.getMoreComics()
 			.subscribe(onSuccess: { comicsDataSource in
-				self.dataSource = self.mapArrayToViewModel(comics: comicsDataSource)
+				
+				let moreData = self.mapArrayToViewModel(comics: comicsDataSource)
+				self.dataSource.append(contentsOf: moreData)
 				self.view?.reloadData()
 			}) { error in
 				self.view?.showError()
 			}.disposed(by: disposeBag)
+	}
+	
+	func getDataSource() -> [ComicViewModel] {
+		return self.dataSource
+	}
+	
+	func getDataSourceCount() -> Int {
+		return self.dataSource.count
+	}
+	
+	func getDataAt(index: Int) -> ComicViewModel {
+		return self.dataSource[index]
 	}
 }
 

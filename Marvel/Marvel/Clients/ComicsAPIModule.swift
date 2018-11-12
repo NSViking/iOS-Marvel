@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 
 public enum ComicsAPIModule {
-	case get(apiKey: String, limit: Int, offset: Int)
+	case get(apiKey: String, limit: Int, offset: Int, timestamp: String, hash: String)
 }
 
 extension ComicsAPIModule {
@@ -22,7 +22,7 @@ extension ComicsAPIModule {
 			
 			let base = URL(string: baseurl)
 			
-			let url = base?.appendingPathComponent(target.path).absoluteString
+			let url = base?.absoluteString
 			let endpoint: Moya.Endpoint = Endpoint(url: url!, sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, task: target.task, httpHeaderFields: target.headers)
 			
 			return endpoint
@@ -40,14 +40,14 @@ extension ComicsAPIModule: Moya.TargetType {
 	
 	public var path: String {
 		switch self {
-		case .get(apiKey: _, _, _):
-			return "/"
+		case .get(apiKey: _, _, _, _, _):
+			return ""
 		}
 	}
 	
 	public var method: Moya.Method {
 		switch self {
-		case .get(apiKey: _,  _, _):
+		case .get(apiKey: _,  _, _, _, _):
 			return .get
 		}
 	}
@@ -58,10 +58,12 @@ extension ComicsAPIModule: Moya.TargetType {
 	
 	public var task: Task {
 		switch self {
-		case .get(let apiKey, let limit, let offset):
-			return .requestParameters(parameters: ["apikey" : apiKey,
-												   "limit": limit,
-												   "offset": offset],
+		case .get(let apiKey, let limit, let offset, let timestamp, let hash):
+			return .requestParameters(parameters: ["limit": limit,
+												   "offset": offset,
+												   "apikey" : apiKey,
+												   "ts": timestamp,
+												   "hash": hash],
 									  encoding: URLEncoding.queryString)
 		}
 	}

@@ -24,8 +24,8 @@ extension ComicsRepository: ComicsRepositoryContract {
 		return self.httpClient
 			.getComics(pagination: pagination)
 			.map { comicsDataArray -> [Comic] in
-				return comicsDataArray.map { userData -> Comic in
-					return Comic()//ComicMapper.mapUserDataToUser(userData: userData)
+				return comicsDataArray.map { comicData -> Comic in
+					return ComicMapper.mapComicDataToComic(comicData: comicData)
 				}
 			}.catchError { error -> Single<[Comic]> in
 				return Single.error(ComicsRepositoryError.generic)

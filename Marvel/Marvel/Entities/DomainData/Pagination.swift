@@ -10,11 +10,11 @@ import Foundation
 
 class Pagination {
 	private var currentPage = 0
-	private var objectsPerPage = 5
+	private var objectsPerPage = 6
 	
 	init() {
 		self.currentPage = 0
-		self.objectsPerPage = 5
+		self.objectsPerPage = 6
 	}
 	
 	init(page: Int, total: Int) {
