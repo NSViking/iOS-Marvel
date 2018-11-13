@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 
 public enum ComicsAPIModule {
-	case get(apiKey: String, limit: Int, offset: Int, timestamp: String, hash: String)
+	case get(apiKey: String, limit: Int, offset: Int, timestamp: String, hash: String, filter: String?)
 }
 
 extension ComicsAPIModule {
@@ -40,14 +40,14 @@ extension ComicsAPIModule: Moya.TargetType {
 	
 	public var path: String {
 		switch self {
-		case .get(apiKey: _, _, _, _, _):
+		case .get(apiKey: _, _, _, _, _, _):
 			return ""
 		}
 	}
 	
 	public var method: Moya.Method {
 		switch self {
-		case .get(apiKey: _,  _, _, _, _):
+		case .get(apiKey: _,  _, _, _, _, _):
 			return .get
 		}
 	}
@@ -58,13 +58,29 @@ extension ComicsAPIModule: Moya.TargetType {
 	
 	public var task: Task {
 		switch self {
-		case .get(let apiKey, let limit, let offset, let timestamp, let hash):
-			return .requestParameters(parameters: ["limit": limit,
-												   "offset": offset,
-												   "apikey" : apiKey,
-												   "ts": timestamp,
-												   "hash": hash],
-									  encoding: URLEncoding.queryString)
+		case .get(let apiKey,
+				  let limit,
+				  let offset,
+				  let timestamp,
+				  let hash,
+				  let filter):
+			
+			if let safeFilter = filter {
+				return .requestParameters(parameters: ["limit": limit,
+													   "offset": offset,
+													   "apikey" : apiKey,
+													   "ts": timestamp,
+													   "hash": hash,
+													   "format": safeFilter],
+										  encoding: URLEncoding.queryString)
+			} else {
+				return .requestParameters(parameters: ["limit": limit,
+													   "offset": offset,
+													   "apikey" : apiKey,
+													   "ts": timestamp,
+													   "hash": hash],
+										  encoding: URLEncoding.queryString)
+			}
 		}
 	}
 	

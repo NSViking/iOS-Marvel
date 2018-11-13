@@ -16,4 +16,8 @@ protocol HomePresenterContract {
 	
 	func getDataSourceCount() -> Int
 	func getDataAt(index: Int) -> ComicViewModel
+	
+	func getFilters() -> [String]
+	
+	func filterBy(index: Int)
 }

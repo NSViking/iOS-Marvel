@@ -32,7 +32,7 @@ private extension HomeViewController {
 	}
 	
 	func setupViewProperties() {
-		self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.barStyle = .black
 		self.navigationController?.view.backgroundColor = UIColor.black
 		self.navigationController?.navigationBar.tintColor = UIColor.white
 		
@@ -43,9 +43,12 @@ private extension HomeViewController {
 	func setupCollectionViewProperties() {
 		collectionView.contentInset = UIEdgeInsets(top: 25, left: 12, bottom: 0, right: 12)
 		collectionView.backgroundColor = UIColor.black
+		
 		collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier())
 		collectionView.register(HomeEmptyImageCollectionViewCell.self, forCellWithReuseIdentifier: HomeEmptyImageCollectionViewCell.identifier())
+		
 		collectionView.register(HomeCollectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionFooterView.identifier())
+		collectionView.register(HomeCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeCollectionHeaderView.identifier())
 
 		DispatchQueue.main.async {
 			self.collectionView.dataSource = self

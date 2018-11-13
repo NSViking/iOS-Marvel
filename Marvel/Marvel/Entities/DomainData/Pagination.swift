@@ -18,8 +18,7 @@ class Pagination {
 	}
 	
 	init(page: Int, total: Int) {
-		self.currentPage = page
-		self.objectsPerPage = total
+		setupData()
 	}
 }
 
@@ -42,5 +41,16 @@ extension Pagination {
 	
 	func next() {
 		self.currentPage += objectsPerPage
+	}
+	
+	func reset() {
+		setupData()
+	}
+}
+
+private extension Pagination {
+	func setupData() {
+		self.currentPage = 0
+		self.objectsPerPage = 6
 	}
 }

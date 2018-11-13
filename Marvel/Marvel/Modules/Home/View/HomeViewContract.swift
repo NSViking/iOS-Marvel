@@ -12,3 +12,10 @@ import Foundation
 	func reloadData()
 	func showError()
 }
+
+enum FilterType: String {
+    case comic = "comic"
+    case magazine = "magazine"
+    case hardcover = "hardcover"
+    case digital = "digital comic"
+}

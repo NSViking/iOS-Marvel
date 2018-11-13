@@ -10,7 +10,8 @@ import Foundation
 import RxSwift
 
 protocol ComicsRepositoryContract {
-	func getComics(pagination: Pagination) -> Single<[Comic]>
+	func getComics(filter: String?,
+				   pagination: Pagination) -> Single<[Comic]>
 }
 
 enum ComicsRepositoryError: Swift.Error, CustomStringConvertible {

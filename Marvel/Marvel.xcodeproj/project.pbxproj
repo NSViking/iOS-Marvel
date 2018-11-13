@@ -66,6 +66,9 @@
 		5C17A775219900F200B9FC25 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A774219900F200B9FC25 /* DetailPresenter.swift */; };
 		5C17A777219900FA00B9FC25 /* DetailPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A776219900FA00B9FC25 /* DetailPresenterContract.swift */; };
 		5C17A7792199015F00B9FC25 /* DetailViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7782199015F00B9FC25 /* DetailViewContract.swift */; };
+		5C6F1217219B68FE00A11B3B /* HomeCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1216219B68FE00A11B3B /* HomeCollectionHeaderView.swift */; };
+		5C6F121A219B6A7300A11B3B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1219219B6A7300A11B3B /* RoundedButton.swift */; };
+		5C6F121E219B79CF00A11B3B /* UIImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F121D219B79CF00A11B3B /* UIImages.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +158,9 @@
 		5C17A774219900F200B9FC25 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		5C17A776219900FA00B9FC25 /* DetailPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterContract.swift; sourceTree = "<group>"; };
 		5C17A7782199015F00B9FC25 /* DetailViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContract.swift; sourceTree = "<group>"; };
+		5C6F1216219B68FE00A11B3B /* HomeCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionHeaderView.swift; path = Marvel/Modules/Home/View/Components/Footer/HomeCollectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		5C6F1219219B6A7300A11B3B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		5C6F121D219B79CF00A11B3B /* UIImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImages.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,7 +239,7 @@
 		5C17A6B82198A7CE00B9FC25 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				5C17A7452198CC8400B9FC25 /* Utils */,
+				5C17A7452198CC8400B9FC25 /* Common */,
 				5C17A70F2198BD1B00B9FC25 /* Modules */,
 				5C17A6FA2198ADAF00B9FC25 /* Entities */,
 				5C17A6F72198AD6400B9FC25 /* Clients */,
@@ -483,6 +489,7 @@
 		5C17A73C2198CA5000B9FC25 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5C6F1214219B68A000A11B3B /* Header */,
 				5C17A7622198F4C000B9FC25 /* Footer */,
 				5C17A7612198F4B600B9FC25 /* NormalCell */,
 				5C17A7602198F4A500B9FC25 /* EmptyImageCell */,
@@ -491,7 +498,7 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		5C17A7452198CC8400B9FC25 /* Utils */ = {
+		5C17A7452198CC8400B9FC25 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				5C17A7462198CC8B00B9FC25 /* Colors.swift */,
@@ -500,8 +507,10 @@
 				5C17A74C2198CD5300B9FC25 /* Views.swift */,
 				5C17A7542198D41300B9FC25 /* Hash.swift */,
 				5C17A75A2198D83100B9FC25 /* Dates.swift */,
+				5C6F1219219B6A7300A11B3B /* RoundedButton.swift */,
+				5C6F121D219B79CF00A11B3B /* UIImages.swift */,
 			);
-			path = Utils;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		5C17A7602198F4A500B9FC25 /* EmptyImageCell */ = {
@@ -566,6 +575,14 @@
 				5C17A776219900FA00B9FC25 /* DetailPresenterContract.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5C6F1214219B68A000A11B3B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F1216219B68FE00A11B3B /* HomeCollectionHeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -826,8 +843,10 @@
 				5C17A75B2198D83100B9FC25 /* Dates.swift in Sources */,
 				5C17A7152198BD4800B9FC25 /* HomeInteractorContract.swift in Sources */,
 				5C17A70B2198B6BD00B9FC25 /* ResponseData.swift in Sources */,
+				5C6F121A219B6A7300A11B3B /* RoundedButton.swift in Sources */,
 				5C17A775219900F200B9FC25 /* DetailPresenter.swift in Sources */,
 				5C17A7402198CACA00B9FC25 /* HomeViewController+Layout.swift in Sources */,
+				5C6F121E219B79CF00A11B3B /* UIImages.swift in Sources */,
 				5C17A7792199015F00B9FC25 /* DetailViewContract.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
 				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,
@@ -842,6 +861,7 @@
 				5C17A74B2198CCC700B9FC25 /* Devices.swift in Sources */,
 				5C17A7052198B58A00B9FC25 /* ComicsAPIModule.swift in Sources */,
 				5C17A7092198B6A500B9FC25 /* ResultsData.swift in Sources */,
+				5C6F1217219B68FE00A11B3B /* HomeCollectionHeaderView.swift in Sources */,
 				5C17A75F2198F32000B9FC25 /* HomeEmptyImageCollectionViewCell+Layout.swift in Sources */,
 				5C17A7442198CBD700B9FC25 /* HomeCollectionViewCell+Layout.swift in Sources */,
 				5C17A7722198FE2900B9FC25 /* DetailHeaderView.swift in Sources */,
