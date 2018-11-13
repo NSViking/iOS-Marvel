@@ -15,7 +15,10 @@ class HomePresenter {
 	var interactor: HomeInteractorContract
 	weak var view: HomeViewContract?
 	
-	private var dataSource: [Comic] = []
+	private var dataSource: [Comic]
+	
+	private let filtersArray: [String]
+	private var filterSelected: String?
 	
 	//RxSwift
 	let disposeBag = DisposeBag()
@@ -26,6 +29,9 @@ class HomePresenter {
 		self.interactor = interactor
 		self.view = view
 		self.router = router
+		
+		self.dataSource = []
+		self.filtersArray = ["All", "comic", "magazine", "hardcover", "digital comic", "digest", "infinite comic"]
 	}
 }
 
@@ -42,7 +48,7 @@ extension HomePresenter: HomePresenterContract {
 	}
 	
 	func setupData() {
-		_ = self.interactor.getComics()
+		_ = self.interactor.getComics(filter: filterSelected)
 			.subscribe(onSuccess: { comicsDataSource in
 				self.dataSource = comicsDataSource
 				self.view?.reloadData()
@@ -52,7 +58,7 @@ extension HomePresenter: HomePresenterContract {
 	}
 	
 	func getMoreData() {
-		_ = self.interactor.getMoreComics()
+		_ = self.interactor.getMoreComics(filter: filterSelected)
 			.subscribe(onSuccess: { comicsDataSource in
 				self.dataSource.append(contentsOf: comicsDataSource)
 				self.view?.reloadData()
@@ -68,6 +74,22 @@ extension HomePresenter: HomePresenterContract {
 	func getDataAt(index: Int) -> ComicViewModel {
 		let comicK = self.dataSource[index]
 		return self.mapComicToViewModel(comic: comicK)
+	}
+	
+	func getFilters() -> [String] {
+		return filtersArray
+	}
+	
+	func filterBy(index: Int) {
+		if index == 0 {
+			self.filterSelected = nil
+		} else {
+			let filterK = filtersArray[index]
+			self.filterSelected = filterK
+		}
+		self.dataSource = []
+		self.view?.reloadData()
+		self.setupData()
 	}
 }
 

@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 
 protocol HomeInteractorContract {
-	func getComics() -> Single<[Comic]>
-	func getMoreComics() -> Single<[Comic]>
+	func getComics(filter: String?) -> Single<[Comic]>
+	func getMoreComics(filter: String?) -> Single<[Comic]>
 }
 
 enum HomeInteractorError: Swift.Error, CustomStringConvertible {

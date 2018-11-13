@@ -21,13 +21,14 @@ class HomeInteractor {
 }
 
 extension HomeInteractor: HomeInteractorContract {
-
-	func getComics() -> Single<[Comic]> {
-		return self.repo.getComics(pagination: self.pagination)
-	}
 	
-	func getMoreComics() -> Single<[Comic]> {
+	func getComics(filter: String?) -> Single<[Comic]> {
+		return self.repo.getComics(filter: filter, pagination: self.pagination)
+	}
+
+	func getMoreComics(filter: String?) -> Single<[Comic]> {
 		self.pagination.next()
-		return self.repo.getComics(pagination: self.pagination)
+		return self.repo.getComics(filter: filter,
+								   pagination: self.pagination)
 	}
 }

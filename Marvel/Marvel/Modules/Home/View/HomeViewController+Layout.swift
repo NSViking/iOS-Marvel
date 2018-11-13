@@ -16,7 +16,6 @@ extension HomeViewController {
 		setupTitle()
 		setupSubviews()
 		setupViewProperties()
-        setupFilterButton()
 		setupCollectionViewProperties()
 		setupAutoLayout()
 	}
@@ -40,21 +39,16 @@ private extension HomeViewController {
 		self.view.backgroundColor = UIColor.black
 		self.navigationController?.navigationBar.prefersLargeTitles = true
 	}
-    
-    func setupFilterButton() {
-        let filterButton = UIBarButtonItem(image: UIImage(named: "filter-results-button"),
-                                           style: .plain,
-                                           target: self,
-                                           action: #selector(filterButtonDidPress))
-        self.navigationItem.setRightBarButton(filterButton, animated: true)
-    }
 	
 	func setupCollectionViewProperties() {
 		collectionView.contentInset = UIEdgeInsets(top: 25, left: 12, bottom: 0, right: 12)
 		collectionView.backgroundColor = UIColor.black
+		
 		collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier())
 		collectionView.register(HomeEmptyImageCollectionViewCell.self, forCellWithReuseIdentifier: HomeEmptyImageCollectionViewCell.identifier())
+		
 		collectionView.register(HomeCollectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionFooterView.identifier())
+		collectionView.register(HomeCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeCollectionHeaderView.identifier())
 
 		DispatchQueue.main.async {
 			self.collectionView.dataSource = self

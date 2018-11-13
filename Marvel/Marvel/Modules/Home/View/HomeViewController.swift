@@ -24,10 +24,6 @@ class HomeViewController: UIViewController {
 	func setupData() {
 		self.presenter?.setupData()
 	}
-    
-    @objc func filterButtonDidPress() {
-        
-    }
 }
 
 extension HomeViewController: HomeViewContract {
@@ -102,12 +98,23 @@ extension HomeViewController {
 		return CGSize(width:(collectionView.frame.size.width), height: 100.0)
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		return CGSize(width:(collectionView.frame.size.width), height: 50.0)
+	}
+	
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		
 		if kind == UICollectionView.elementKindSectionFooter {
 			guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeCollectionFooterView.identifier(), for: indexPath) as? HomeCollectionFooterView else {
 				return UICollectionReusableView()
 			}
+			return view
+		} else if kind == UICollectionView.elementKindSectionHeader {
+			guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeCollectionHeaderView.identifier(), for: indexPath) as? HomeCollectionHeaderView, let safePresenter = self.presenter else {
+				return UICollectionReusableView()
+			}
+			view.delegate = self
+			view.configure(filters: safePresenter.getFilters())
 			return view
 		}
 		return UICollectionReusableView()
@@ -132,5 +139,11 @@ extension HomeViewController {
 			
 			footerView?.stopAnimating()
 		}
+	}
+}
+
+extension HomeViewController: HomeCollectionHeaderViewDelegate {
+	func filterBy(index: Int) {
+		self.presenter?.filterBy(index: index)
 	}
 }
