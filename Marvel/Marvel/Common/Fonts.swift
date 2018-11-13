@@ -14,4 +14,8 @@ extension UIFont {
 	static func bold(size: CGFloat) -> UIFont {
 		return UIFont.boldSystemFont(ofSize: size)
 	}
+	
+	static func regular(size: CGFloat) -> UIFont {
+		return UIFont.systemFont(ofSize: size)
+	}
 }

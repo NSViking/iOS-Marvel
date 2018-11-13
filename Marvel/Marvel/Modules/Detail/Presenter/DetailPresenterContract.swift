@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailPresenterContract {
-	func getComic() -> ComicViewModel
+	func setupData()
 }

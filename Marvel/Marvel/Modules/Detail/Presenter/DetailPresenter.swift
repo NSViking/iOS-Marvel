@@ -21,9 +21,9 @@ class DetailPresenter {
 
 extension DetailPresenter: DetailPresenterContract {
 
-	func getComic() -> ComicViewModel {
+	func setupData() {
 		let viewModel = self.mapComicToViewModel(comics: self.comic)
-		return viewModel
+		self.view?.renderData(comicViewModel: viewModel)
 	}
 }
 

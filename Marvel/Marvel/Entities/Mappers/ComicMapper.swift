@@ -14,7 +14,8 @@ class ComicMapper {
 		let comicViewModel = ComicViewModel(comicId: comic.id,
 											title: comic.title,
 											image: comic.thumbnailUrl,
-											price: comic.price)
+											price: comic.price,
+											description: comic.description)
 		
 		return comicViewModel
 	}

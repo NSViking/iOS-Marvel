@@ -12,15 +12,38 @@ import RxSwift
 
 class HTTPClient: HTTPClientContract {
 	
-	let comicsProvider = ComicsAPIModule.getProvider(baseurl: "https://gateway.marvel.com:443/v1/public/comics")
-	let apiKey = ""
+	var comicsProvider: MoyaProvider<ComicsAPIModule>?
+	var apiKey = ""
+	var apiSecret = ""
+	
+	init() {
+		if let path = Bundle.main.path(forResource: "env", ofType: "json") {
+			do {
+				let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+				let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+				if let jsonResult = jsonResult as? Dictionary<String, String>,
+					let apiKey = jsonResult["apiKey"],
+					let apiSecret = jsonResult["apiSecret"],
+					let endpoint = jsonResult["endpoint"] {
+			
+					self.apiKey = apiKey
+					self.apiSecret = apiSecret
+					
+					comicsProvider = ComicsAPIModule.getProvider(baseurl: endpoint)
+
+				}
+			} catch {
+				
+			}
+		}
+	}
 	
 	func getComics(filter: String?, pagination: Pagination) -> Single<[ComicData]> {
 		
 		let timestamp = String(Date().toMilliseconds())
 		let hash = self.createMarvelHash(timestamp: timestamp)
 		
-		return comicsProvider
+		return comicsProvider?
 			.rx
 			.request(.get(apiKey: apiKey,
 						  limit: pagination.getObjectsPerPage(),
@@ -38,7 +61,7 @@ class HTTPClient: HTTPClientContract {
 			}.catchError({ error -> Single<[ComicData]> in
 				print(error.localizedDescription)
  				return Single.error(HTTPClientError.genericError)
-			})
+			}) ?? Single.error(HTTPClientError.nonProvider)
 	}
 }
 
@@ -47,7 +70,7 @@ private extension HTTPClient {
 	func createMarvelHash(timestamp: String) -> String {
 		
 		let publicKey = apiKey
-		let privateKey = ""
+		let privateKey = apiSecret
 		
 		let completeString = "\(timestamp)\(privateKey)\(publicKey)"
 		
