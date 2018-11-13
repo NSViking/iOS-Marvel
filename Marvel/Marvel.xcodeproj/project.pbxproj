@@ -68,6 +68,7 @@
 		5C17A7792199015F00B9FC25 /* DetailViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A7782199015F00B9FC25 /* DetailViewContract.swift */; };
 		5C6F1217219B68FE00A11B3B /* HomeCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1216219B68FE00A11B3B /* HomeCollectionHeaderView.swift */; };
 		5C6F121A219B6A7300A11B3B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1219219B6A7300A11B3B /* RoundedButton.swift */; };
+		5C6F121E219B79CF00A11B3B /* UIImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F121D219B79CF00A11B3B /* UIImages.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		5C17A7782199015F00B9FC25 /* DetailViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContract.swift; sourceTree = "<group>"; };
 		5C6F1216219B68FE00A11B3B /* HomeCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionHeaderView.swift; path = Marvel/Modules/Home/View/Components/Footer/HomeCollectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		5C6F1219219B6A7300A11B3B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		5C6F121D219B79CF00A11B3B /* UIImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImages.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				5C17A7542198D41300B9FC25 /* Hash.swift */,
 				5C17A75A2198D83100B9FC25 /* Dates.swift */,
 				5C6F1219219B6A7300A11B3B /* RoundedButton.swift */,
+				5C6F121D219B79CF00A11B3B /* UIImages.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 				5C6F121A219B6A7300A11B3B /* RoundedButton.swift in Sources */,
 				5C17A775219900F200B9FC25 /* DetailPresenter.swift in Sources */,
 				5C17A7402198CACA00B9FC25 /* HomeViewController+Layout.swift in Sources */,
+				5C6F121E219B79CF00A11B3B /* UIImages.swift in Sources */,
 				5C17A7792199015F00B9FC25 /* DetailViewContract.swift in Sources */,
 				5C17A6F02198ACE400B9FC25 /* ComicsRepositoryContract.swift in Sources */,
 				5C17A7002198AF9E00B9FC25 /* Comic.swift in Sources */,

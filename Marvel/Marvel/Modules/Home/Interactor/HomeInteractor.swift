@@ -23,6 +23,7 @@ class HomeInteractor {
 extension HomeInteractor: HomeInteractorContract {
 	
 	func getComics(filter: String?) -> Single<[Comic]> {
+		self.pagination.reset()
 		return self.repo.getComics(filter: filter, pagination: self.pagination)
 	}
 

@@ -62,13 +62,17 @@ extension HomeCollectionHeaderView {
 	}
 	
 	func configure(filters: [String]) {
-		self.removeArrangedSubviews()
 		
-		for (index, element) in filters.enumerated() {
-			let button = self.createButtonFor(filter: element)
-			button.tag = index
-			button.addTarget(self, action: #selector(filterButtonDidPress), for: .touchUpInside)
-			self.stackView.addArrangedSubview(button)
+		if (self.stackView.arrangedSubviews.count == 0) {
+			for (index, element) in filters.enumerated() {
+				let button = self.createButtonFor(filter: element)
+				button.tag = index
+				button.addTarget(self, action: #selector(filterButtonDidPress), for: .touchUpInside)
+				self.stackView.addArrangedSubview(button)
+				if index == 0 {
+					button.isSelected = true
+				}
+			}
 		}
 	}
 	
@@ -80,13 +84,6 @@ extension HomeCollectionHeaderView {
 }
 
 private extension HomeCollectionHeaderView {
-
-	func removeArrangedSubviews() {
-		for view in self.stackView.arrangedSubviews {
-			view.removeFromSuperview()
-			self.stackView.removeArrangedSubview(view)
-		}
-	}
 	
 	func deselectAllFiltersLess(selectedButton: UIButton) {
 		for view in self.stackView.arrangedSubviews {
@@ -99,7 +96,7 @@ private extension HomeCollectionHeaderView {
 	
 	func createButtonFor(filter: String) -> UIButton {
 		let buttonFilter = RoundedButton()
-		buttonFilter.setTitle("  \(filter)  ", for: .normal)
+		buttonFilter.setTitle("   \(filter)   ", for: .normal)
 		buttonFilter.snp.makeConstraints { maker in
 			maker.height.equalTo(30)
 		}

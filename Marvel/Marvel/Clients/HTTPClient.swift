@@ -15,7 +15,7 @@ class HTTPClient: HTTPClientContract {
 	let comicsProvider = ComicsAPIModule.getProvider(baseurl: "https://gateway.marvel.com:443/v1/public/comics")
 	let apiKey = ""
 	
-	func getComics(pagination: Pagination) -> Single<[ComicData]> {
+	func getComics(filter: String?, pagination: Pagination) -> Single<[ComicData]> {
 		
 		let timestamp = String(Date().toMilliseconds())
 		let hash = self.createMarvelHash(timestamp: timestamp)
@@ -26,7 +26,8 @@ class HTTPClient: HTTPClientContract {
 						  limit: pagination.getObjectsPerPage(),
 						  offset: pagination.getCurrentPage(),
 						  timestamp: timestamp,
-						  hash: hash))
+						  hash: hash,
+						  filter: filter))
 			.filterSuccessfulStatusCodes()
 			.map(ResponseData.self)
 			.map { moyaResponse -> [ComicData] in

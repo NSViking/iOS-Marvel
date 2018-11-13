@@ -23,39 +23,17 @@ class RoundedButton: UIButton {
 	private func setup() {
 		setTitleColor(.white, for: .normal)
 		setTitleColor(UIColor.midnightBlue(), for: .highlighted)
-		applyNormalStyle()
+		setTitleColor(UIColor.midnightBlue(), for: .selected)
+		
+		setBackgroundImage(UIImage(color: UIColor.midnightBlue()), for: .normal)
+		setBackgroundImage(UIImage(color: UIColor.white), for: .highlighted)
+		setBackgroundImage(UIImage(color: UIColor.white), for: .selected)
 	}
 	
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		layer.cornerRadius = frame.height / 2
 		layer.borderWidth = 1
+		layer.masksToBounds = true
 	}
-	
-	override var isHighlighted: Bool {
-		didSet {
-			if isSelected {
-				applyHighlightedStyle()
-			} else {
-				isHighlighted ? applyHighlightedStyle() : applyNormalStyle()
-			}
-		}
-	}
-	
-	override var isSelected: Bool {
-		didSet {
-			isSelected ? applyHighlightedStyle() : applyNormalStyle()
-		}
-	}
-	
-	private func applyNormalStyle() {
-		backgroundColor = UIColor.midnightBlue()
-		layer.borderColor = UIColor.white.cgColor
-	}
-	
-	private func applyHighlightedStyle() {
-		backgroundColor = .white
-		layer.borderColor = UIColor.midnightBlue().cgColor
-	}
-	
 }
