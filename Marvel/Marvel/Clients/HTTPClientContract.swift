@@ -18,4 +18,5 @@ enum HTTPClientError: Swift.Error, CustomStringConvertible {
 	case noContentError
 	case noConnectionError
 	case genericError
+	case nonProvider
 }

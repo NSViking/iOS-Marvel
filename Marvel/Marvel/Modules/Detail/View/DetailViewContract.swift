@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc protocol DetailViewContract {
-	
+protocol DetailViewContract: NSObjectProtocol {
+	func renderData(comicViewModel: ComicViewModel)
 }

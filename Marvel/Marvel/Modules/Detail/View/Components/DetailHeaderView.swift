@@ -13,7 +13,6 @@ class DetailHeaderView: UIView {
 	
 	let comicImageView = UIImageView()
 	let titleLabel = UILabel()
-	let priceLabel = UILabel()
 	
 	init() {
 		super.init(frame: CGRect.zero)
@@ -26,7 +25,6 @@ class DetailHeaderView: UIView {
 	
 	func configure(title: String, price: String, imageURL: String) {
 		titleLabel.text = title
-		priceLabel.text = price
 		
 		if let url = URL(string: imageURL) {
 			comicImageView.af_setImage(withURL: url,
@@ -41,19 +39,24 @@ extension DetailHeaderView {
 	{
 		setupSubviews()
 		setupViewProperties()
+		setupImageProperties()
 		setupTitleProperties()
-		setupPriceProperties()
 		setupAutoLayout()
 	}
 	
 	func setupSubviews() {
 		self.addSubview(comicImageView)
 		self.addSubview(titleLabel)
-		self.addSubview(priceLabel)
 	}
 	
 	func setupViewProperties() {
 		self.backgroundColor = UIColor.black
+	}
+	
+	func setupImageProperties() {
+		self.comicImageView.contentMode = .scaleAspectFit
+		self.comicImageView.layer.borderColor = UIColor.white.cgColor
+		self.comicImageView.layer.borderWidth = 2
 	}
 	
 	func setupTitleProperties() {
@@ -62,30 +65,20 @@ extension DetailHeaderView {
 		self.titleLabel.numberOfLines = 0
 	}
 	
-	func setupPriceProperties() {
-		self.priceLabel.textColor = UIColor.white
-		self.priceLabel.font = UIFont.bold(size: 24)
-		self.priceLabel.numberOfLines = 0
-	}
-	
 	func setupAutoLayout() {
 		self.comicImageView.snp.makeConstraints { maker in
-			maker.left.equalToSuperview().offset(15)
-			maker.top.equalToSuperview().offset(15)
+			maker.left.equalToSuperview()
+			maker.top.equalToSuperview().offset(20)
 			maker.width.equalTo(180)
 			maker.height.equalTo(300)
 		}
 		
 		self.titleLabel.snp.makeConstraints { maker in
-			maker.left.equalTo(comicImageView.snp.right).offset(15)
-			maker.right.equalToSuperview().offset(-15)
-			maker.top.equalToSuperview().offset(15)
-		}
-
-		self.priceLabel.snp.makeConstraints { maker in
-			maker.left.equalTo(comicImageView.snp.right).offset(15)
-			maker.right.equalToSuperview().offset(-15)
-			maker.top.equalTo(titleLabel.snp.bottom).offset(15)
+			maker.right.equalToSuperview()
+			maker.top.equalTo(comicImageView.snp.bottom).offset(15)
+			maker.left.equalToSuperview()
+			maker.bottom.equalToSuperview().offset(-15)
+			maker.height.equalTo(100)
 		}
 	}
 }

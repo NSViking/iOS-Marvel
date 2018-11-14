@@ -12,10 +12,13 @@ import UIKit
 class DetailViewController: UIViewController {
 	
 	var stackView = UIStackView()
+	var scrollView = UIScrollView()
 	
 	var presenter: DetailPresenterContract?
 	
 	var detailHeader = DetailHeaderView()
+	var detailDescriptionLabel = UILabel()
+	var copyrightLabel = UILabel()
 	
 	override func viewDidLoad() {
 		setupUI()
@@ -23,15 +26,18 @@ class DetailViewController: UIViewController {
 	}
 	
 	func setupData() {
-		guard let comicViewModel = self.presenter?.getComic() else {
-			return
-		}
-		self.detailHeader.configure(title: comicViewModel.title,
-									price: comicViewModel.price,
-									imageURL: comicViewModel.image)
+		self.presenter?.setupData()
 	}
 }
 
 extension DetailViewController: DetailViewContract {
+	func renderData(comicViewModel: ComicViewModel) {
+		self.detailHeader.configure(title: comicViewModel.title,
+									price: comicViewModel.price,
+									imageURL: comicViewModel.image)
+		self.detailDescriptionLabel.text = comicViewModel.description
+		
+	}
+	
 	
 }
