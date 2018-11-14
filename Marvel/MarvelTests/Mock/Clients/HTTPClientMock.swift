@@ -28,7 +28,7 @@ class HTTPClientMock: NSObject, Mock {
 
 extension HTTPClientMock: HTTPClientContract {
 	
-	func getComics(pagination: Pagination) -> Single<[ComicData]> {
+	func getComics(filter: String?,pagination: Pagination) -> Single<[ComicData]> {
 		let userData = ComicData(id: 0,
 								 title: "",
 								 description: "",

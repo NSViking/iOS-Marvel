@@ -28,7 +28,7 @@ class ComicsRepositoryMock: NSObject, Mock {
 }
 
 extension ComicsRepositoryMock: ComicsRepositoryContract {
-	func getComics(pagination: Pagination) -> Single<[Comic]> {
+	func getComics(filter: String?, pagination: Pagination) -> Single<[Comic]> {
 		let user = Comic()
 		return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[Comic]>
 	}

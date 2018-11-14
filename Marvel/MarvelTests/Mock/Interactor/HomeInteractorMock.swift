@@ -27,12 +27,13 @@ class HomeInteractorMock: NSObject, Mock {
 }
 
 extension HomeInteractorMock: HomeInteractorContract {
-	func getComics() -> Single<[Comic]> {
+	
+	func getComics(filter: String?) -> Single<[Comic]> {
 		let user = Comic()
 		return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[Comic]>
 	}
 	
-	func getMoreComics() -> Single<[Comic]> {
+	func getMoreComics(filter: String?) -> Single<[Comic]> {
 		let user = Comic()
 		return callHandler.accept(Single.just([user]), ofFunction: #function, atFile: #file, inLine: #line, withArgs: nil) as! Single<[Comic]>
 	}

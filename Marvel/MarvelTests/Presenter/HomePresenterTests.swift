@@ -37,19 +37,19 @@ class HomePresenterTests: XCTestCase {
 		
 		presenter.setupData()
 		
-		let _ = mockInteractor.verify(verificationMode: Once()).getComics()
+		let _ = mockInteractor.verify(verificationMode: Once()).getComics(filter: nil)
 		let _ = mockView.verify(verificationMode: Once()).reloadData()
 	}
 	
 	func testSetupDataWrong() {
 		
 		let _ = mockInteractor.when()
-			.call(withReturnValue: mockInteractor.getComics())
+			.call(withReturnValue: mockInteractor.getComics(filter: nil))
 			.thenReturn(Single.error(HomeInteractorError.generic))
 		
 		presenter.setupData()
 		
-		let _ = mockInteractor.verify(verificationMode: Once()).getComics()
+		let _ = mockInteractor.verify(verificationMode: Once()).getComics(filter: nil)
 		let _ = mockView.verify(verificationMode: Once()).showError()
 	}
 	
@@ -57,19 +57,19 @@ class HomePresenterTests: XCTestCase {
 		
 		presenter.getMoreData()
 		
-		let _ = mockInteractor.verify(verificationMode: Once()).getMoreComics()
+		let _ = mockInteractor.verify(verificationMode: Once()).getMoreComics(filter: nil)
 		let _ = mockView.verify(verificationMode: Once()).reloadData()
 	}
 	
 	func testGetMoreDataWrong() {
 		
 		let _ = mockInteractor.when()
-			.call(withReturnValue: mockInteractor.getMoreComics())
+			.call(withReturnValue: mockInteractor.getMoreComics(filter: nil))
 			.thenReturn(Single.error(HomeInteractorError.generic))
 		
 		presenter.getMoreData()
 		
-		let _ = mockInteractor.verify(verificationMode: Once()).getMoreComics()
+		let _ = mockInteractor.verify(verificationMode: Once()).getMoreComics(filter: nil)
 		let _ = mockView.verify(verificationMode: Once()).showError()
 	}
 	
@@ -79,5 +79,12 @@ class HomePresenterTests: XCTestCase {
 		presenter.goToDetail(index: 0)
 		
 		let _ = mockRouter.verify(verificationMode: Once()).goToComicDetail(comic: Comic())
+	}
+	
+	func testsFilterBy() {
+		self.presenter.filterBy(index: 0)
+		
+		let _ = mockInteractor.verify(verificationMode: Once()).getComics(filter: nil)
+		let _ = mockView.verify(verificationMode: AtMostTimes(times: Times.init(times: 2))).reloadData()
 	}
 }

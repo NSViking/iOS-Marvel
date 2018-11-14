@@ -33,11 +33,11 @@ class HomeInteractorTests: XCTestCase {
 		
 		let mockResponse: [Comic] = []
 		let _ = mockRepo.when()
-			.call(withReturnValue: mockRepo.getComics(pagination: pagination))
+			.call(withReturnValue: mockRepo.getComics(filter: nil, pagination: pagination))
 			.thenReturn(Single.just(mockResponse))
 		
 		do {
-			let results = try self.interactor.getComics()
+			let results = try self.interactor.getComics(filter: nil)
 				.toBlocking()
 				.single()
 			XCTAssertTrue(results.count == 0)
@@ -46,18 +46,18 @@ class HomeInteractorTests: XCTestCase {
 			XCTFail()
 		}
 		
-		let _ = mockRepo.verify(verificationMode: Once()).getComics(pagination: pagination)
+		let _ = mockRepo.verify(verificationMode: Once()).getComics(filter: nil, pagination: pagination)
 	}
 	
 	func testGetMoreUsers() {
 		
 		let mockResponse: [Comic] = []
 		let _ = mockRepo.when()
-			.call(withReturnValue: mockRepo.getComics(pagination: pagination))
+			.call(withReturnValue: mockRepo.getComics(filter: nil, pagination: pagination))
 			.thenReturn(Single.just(mockResponse))
 		
 		do {
-			let results = try self.interactor.getMoreComics()
+			let results = try self.interactor.getMoreComics(filter: nil)
 				.toBlocking()
 				.single()
 			XCTAssertTrue(results.count == 0)
@@ -66,6 +66,6 @@ class HomeInteractorTests: XCTestCase {
 			XCTFail()
 		}
 		
-		let _ = mockRepo.verify(verificationMode: Once()).getComics(pagination: pagination)
+		let _ = mockRepo.verify(verificationMode: Once()).getComics(filter: nil, pagination: pagination)
 	}
 }

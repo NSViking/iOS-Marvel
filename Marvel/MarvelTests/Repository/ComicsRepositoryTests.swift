@@ -38,11 +38,11 @@ class UserRepositoryTests: XCTestCase {
 		let pagination = Pagination(page: 0, total: 5)
 		
 		let _ = mockClient.when()
-			.call(withReturnValue: mockClient.getComics(pagination: pagination))
+			.call(withReturnValue: mockClient.getComics(filter: nil, pagination: pagination))
 			.thenReturn(Single.just(mockResponse))
 		
 		do {
-			let results = try self.repo.getComics(pagination: pagination)
+			let results = try self.repo.getComics(filter: nil, pagination: pagination)
 				.toBlocking(timeout: 1.0)
 				.single()
 			
@@ -51,6 +51,6 @@ class UserRepositoryTests: XCTestCase {
 			XCTFail()
 		}
 		
-		let _ = mockClient.verify(verificationMode: Once()).getComics(pagination: pagination)
+		let _ = mockClient.verify(verificationMode: Once()).getComics(filter: nil, pagination: pagination)
 	}
 }

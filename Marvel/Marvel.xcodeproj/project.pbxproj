@@ -70,6 +70,8 @@
 		5C6F121A219B6A7300A11B3B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1219219B6A7300A11B3B /* RoundedButton.swift */; };
 		5C6F121E219B79CF00A11B3B /* UIImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F121D219B79CF00A11B3B /* UIImages.swift */; };
 		5C6F1221219B7B9C00A11B3B /* env.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F1220219B7B9C00A11B3B /* env.json */; };
+		5C6F1223219B9FD000A11B3B /* DetailViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1222219B9FD000A11B3B /* DetailViewMock.swift */; };
+		5C6F1225219BA01800A11B3B /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F1224219BA01800A11B3B /* DetailPresenterTests.swift */; };
 		94B8F56A809BAD8863308D52 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14C4717631FECBEDA6A825 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +165,8 @@
 		5C6F1219219B6A7300A11B3B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		5C6F121D219B79CF00A11B3B /* UIImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImages.swift; sourceTree = "<group>"; };
 		5C6F1220219B7B9C00A11B3B /* env.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = env.json; sourceTree = "<group>"; };
+		5C6F1222219B9FD000A11B3B /* DetailViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMock.swift; sourceTree = "<group>"; };
+		5C6F1224219BA01800A11B3B /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		6C560F9B41F92AAA486C5EBD /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901E5E3B9D186C55ACFA8084 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		BEF8F28BEC761FE777998C36 /* Pods-MarvelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelTests/Pods-MarvelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				5C17A72C2198C59000B9FC25 /* HomePresenterTests.swift */,
+				5C6F1224219BA01800A11B3B /* DetailPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				5C17A7332198C7E800B9FC25 /* HomeViewMock.swift */,
+				5C6F1222219B9FD000A11B3B /* DetailViewMock.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -907,8 +913,10 @@
 				5C17A6CF2198A7D100B9FC25 /* MarvelTests.swift in Sources */,
 				5C17A72B2198C58700B9FC25 /* HomeInteractorTests.swift in Sources */,
 				5C17A6F32198ACFA00B9FC25 /* ComicsRepositoryTests.swift in Sources */,
+				5C6F1225219BA01800A11B3B /* DetailPresenterTests.swift in Sources */,
 				5C17A73B2198C82F00B9FC25 /* HomeInteractorMock.swift in Sources */,
 				5C17A7322198C7C900B9FC25 /* HomeRouterMock.swift in Sources */,
+				5C6F1223219B9FD000A11B3B /* DetailViewMock.swift in Sources */,
 				5C17A7342198C7E800B9FC25 /* HomeViewMock.swift in Sources */,
 				5C17A70E2198B84100B9FC25 /* ComicsAPIModuleTests.swift in Sources */,
 				5C17A6F62198AD4B00B9FC25 /* HTTPClientMock.swift in Sources */,
